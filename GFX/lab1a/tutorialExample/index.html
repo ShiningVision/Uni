@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>WegGL Example</title>
+
+    <script type="text/javascript" src="gl-matrix-min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="Shape.js"></script>
+    <script type="text/javascript" src="helpers.js"></script>
+
+    <script id="v-shader" type="x-shader/x-vertex">
+
+        precision mediump float;
+
+        attribute vec4 vertexPosition; 
+        attribute vec4 vertexColor;    
+
+        uniform mat4 transformationMatrix;
+        uniform mat4 projectionMatrix;
+        uniform mat4 viewMatrix;
+
+        varying vec4 fragmentColor;    
+
+        void main() {
+    
+            gl_Position = projectionMatrix * viewMatrix * transformationMatrix * vertexPosition; 
+            fragmentColor = vertexColor; 
+
+        }
+
+    </script>
+
+    <script id="f-shader" type="x-shader/x-fragment">
+
+        precision mediump float;
+
+        varying vec4 fragmentColor;
+
+        void main() {
+
+            gl_FragColor = fragmentColor;
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <canvas id="canvas" width="600" height="600"></canvas>
+
+
+</body>
+
+
+</html>

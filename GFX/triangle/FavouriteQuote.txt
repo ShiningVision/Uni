@@ -1,0 +1,11 @@
+Page 60.
+Chapter 1.7.3
+
+If we think in terms of processing the geometry of our objects to obtain an image,... showing the four major steps in the imaging process:
+1. Vertex processing
+2. Clipping and primitive assembly
+3. Rasterization
+4. Fragment processing
+
+Link to my favourite WebGL-Tutorial: https://www.youtube.com/watch?v=kB0ZVUrI4Aw
+It is a thourough practical tutorial with clear explanations and honest remarks.
